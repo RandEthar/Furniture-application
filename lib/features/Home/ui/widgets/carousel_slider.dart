@@ -48,7 +48,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 }
 
 List<String> pathImage = [
-  "assets/images/carouselSlider_image1.png",
-  "assets/images/carouselSlider_image2.png",
-  "assets/images/carouselSlider_image2.png",
+  "asset/images/carisol_slider1.png",
+  "asset/images/carisol_slider2.png",
+  "asset/images/carisol_slider2.png",
 ];

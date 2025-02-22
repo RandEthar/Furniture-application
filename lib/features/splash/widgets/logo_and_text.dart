@@ -42,7 +42,7 @@ class _LogoAndTextState extends State<LogoAndText>
           scale: scaleAnimationLogo,
           child: Padding(
             padding: EdgeInsets.only(left: 144.w, right: 144.w, top: 333.h),
-            child: Image.asset("assets/images/logo.png"),
+            child: Image.asset("asset/images/homehaven.png"),
           ),
         ),
         verticalSpace(16),

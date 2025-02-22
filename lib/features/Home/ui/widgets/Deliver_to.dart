@@ -15,7 +15,7 @@ class DeliverTo extends StatelessWidget {
       padding:EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(children: [
         SvgPicture.asset(
-            "assets/svg/location-icon.svg",
+            "asset/svg/location-icon.svg",
             height: 20.h,
             width: 20.w,
           ),horizontalSpacing(8)
@@ -34,7 +34,7 @@ class DeliverTo extends StatelessWidget {
       ),
       
        horizontalSpacing(8),  SvgPicture.asset(
-            "assets/svg/down-icon.svg",
+            "asset/svg/down-icon.svg",
             height: 20.h,
             width: 20.w,
           ),

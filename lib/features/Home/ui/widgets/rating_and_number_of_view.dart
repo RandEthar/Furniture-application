@@ -14,7 +14,7 @@ class RatingAndNumberOfView extends StatelessWidget {
     return Row(
       children: [
         SvgPicture.asset(
-          "assets/svg/Star.svg",
+          "asset/svg/Star.svg",
           height: 18,
           width: 18,
         ),

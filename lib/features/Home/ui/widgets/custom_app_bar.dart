@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
             prefixIcon: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
               child: SvgPicture.asset(
-                "assets/svg/search-icon.svg",
+                "asset/svg/search-icon.svg",
                 height: 20.h,
                 width: 20.w,
               ),
@@ -27,7 +27,7 @@ class CustomAppBar extends StatelessWidget {
             suffixIcon: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
               child: SvgPicture.asset(
-                "assets/svg/camera.svg",
+                "asset/svg/camera.svg",
                 height: 20.h,
                 width: 20.w,
               ),
@@ -37,7 +37,7 @@ class CustomAppBar extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           child: SvgPicture.asset(
-            "assets/svg/notification-icon.svg",
+            "asset/svg/notification-icon.svg",
             height: 20.h,
             width: 20.w,
           ),

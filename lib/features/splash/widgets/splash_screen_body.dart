@@ -16,7 +16,7 @@ class SplashScreenBody extends StatelessWidget {
         ColorsManeger.darkGreenTeal
       ],begin:Alignment.topLeft,end:Alignment.bottomRight )),
     
-      child: LogoAndText(),
+      child:const LogoAndText(),
     
     );
   }

@@ -37,7 +37,7 @@ class _CustomFormState extends State<CustomForm> {
           prefixIcon: Padding(
             padding: EdgeInsets.only(right: 16.w, left: 20.w),
             child: SvgPicture.asset(
-              "assets/svg/email.svg",
+              "asset/svg/email.svg",
               height: 16.h,
               width: 20.w,
               colorFilter: const ColorFilter.mode(
@@ -81,7 +81,7 @@ class _CustomFormState extends State<CustomForm> {
           prefixIcon: Padding(
             padding: EdgeInsets.only(right: 16.w, left: 20.w),
             child: SvgPicture.asset(
-              "assets/svg/password.svg",
+              "asset/svg/password.svg",
               height: 16.h,
               width: 20.w,
               colorFilter: const ColorFilter.mode(
