@@ -12,6 +12,11 @@ static   TextStyle inter36ExtraBoldWhite=GoogleFonts.inter(
     fontWeight: FontWeightHelper.extraBold,
     fontSize: 36.sp
   );
+  static   TextStyle manrope10semiBoldWhite=GoogleFonts.manrope(
+    color: Colors.white,
+    fontWeight: FontWeightHelper.semiBold,
+    fontSize: 10.sp
+  );
 static   TextStyle manrope32ExtraBoldBlack=GoogleFonts.manrope(
     color: Colors.black,
     fontWeight: FontWeightHelper.extraBold,

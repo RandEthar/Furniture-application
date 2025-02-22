@@ -12,4 +12,6 @@ static const Color dimGray=Color(0xff404040);
 static const Color passGray=Color(0xff9E9E9E);
 static const Color silverGray=Color(0xff9E9E9E);
 static const Color grayc2=Color(0xffC2C2C2);
+static const Color red=Color(0xffE44A4A);
+
 }

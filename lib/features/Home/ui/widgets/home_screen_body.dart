@@ -4,6 +4,8 @@ import 'package:furniture_app/core/helper/spacing.dart';
 import 'package:furniture_app/features/Home/ui/widgets/Deliver_to.dart';
 import 'package:furniture_app/features/Home/ui/widgets/carousel_slider.dart';
 import 'package:furniture_app/features/Home/ui/widgets/custom_app_bar.dart';
+import 'package:furniture_app/features/Home/ui/widgets/list_view_item.dart';
+import 'package:furniture_app/features/Home/ui/widgets/special_offers_see_more.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -20,8 +22,11 @@ class HomeScreenBody extends StatelessWidget {
         ,  verticalSpace(12),
         const DeliverTo(),
           verticalSpace(24),
-        const  CustomCarouselSlider()
-      
+        const  CustomCarouselSlider(),
+        verticalSpace(24),
+       const  SpecialOffersSeeMore(),
+        verticalSpace(16),
+      Center(child: const ListViewItem ())
       ],),
     );
   }
