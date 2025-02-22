@@ -4,8 +4,8 @@ import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/styles.dart';
 
 class ContainerDiscount extends StatelessWidget {
-  const ContainerDiscount({super.key});
-
+  const ContainerDiscount({super.key, required this.discount});
+    final double discount;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +15,9 @@ class ContainerDiscount extends StatelessWidget {
           color: ColorsManeger.red,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(10.r),
-              bottomRight: Radius.circular(10.r))),child: Center(child: Text("45% OFF",style: TextStyles.manrope10semiBoldWhite,)),
+              bottomRight: Radius.circular(10.r))),child: Center(child: Text(
+                textAlign: TextAlign.center,
+                "${discount}% OFF",style: TextStyles.manrope10semiBoldWhite,)),
     );
   }
 }

@@ -4,10 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
 
 import 'package:furniture_app/core/theming/styles.dart';
+import 'package:furniture_app/features/Home/data/furniture_model.dart';
 
 class RatingAndNumberOfView extends StatelessWidget {
-  const RatingAndNumberOfView({super.key});
-
+  const RatingAndNumberOfView({super.key, required this.furnitureModel});
+  final FurnitureModel furnitureModel;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +19,7 @@ class RatingAndNumberOfView extends StatelessWidget {
           width: 18,
         ),
         horizontalSpacing(4),
-        Text("4.9 (256)", style: TextStyles.manrope12RegulardimGray),
+        Text("${furnitureModel.rating} (${furnitureModel.reviews})", style: TextStyles.manrope12RegulardimGray),
       ],
     );
   }
