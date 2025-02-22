@@ -11,4 +11,5 @@ static const Color extradarkGray=Color(0xff757575);
 static const Color dimGray=Color(0xff404040);
 static const Color passGray=Color(0xff9E9E9E);
 static const Color silverGray=Color(0xff9E9E9E);
+static const Color grayc2=Color(0xffC2C2C2);
 }

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
 import 'package:furniture_app/core/theming/colors.dart';
+import 'package:furniture_app/core/utils/validators.dart';
 import 'package:furniture_app/core/widgets/text_form_field_app.dart';
 import 'package:furniture_app/features/Login/logic/cubit/login_cubit.dart';
 
@@ -19,10 +20,19 @@ class _CustomFormState extends State<CustomForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      autovalidateMode: context.read<LoginCubit>().autovalidateMode,
       key: context.read<LoginCubit>().formKey,
         child: Column(
       children: [
         CustomTextField(
+          validator: (value){
+              if (value==null||value.isEmpty) {
+                return 'Please Enter Your Email';
+              }else if(!isValidEmail(email: value)){
+                      return 'Please Enter a valid email';
+              }
+              return null;
+          },
           controller: context.read<LoginCubit>().emailController,
           prefixIcon: Padding(
             padding: EdgeInsets.only(right: 16.w, left: 20.w),
@@ -42,6 +52,14 @@ class _CustomFormState extends State<CustomForm> {
         ),
         verticalSpace(16),
         CustomTextField(
+                    validator: (value){
+              if (value==null||value.isEmpty) {
+                return 'Please Enter Your Email';
+              }else if(!isValidPassword( value)){
+                      return 'Please Enter a valid email';
+              }
+              return null;
+          },
             controller: context.read<LoginCubit>().passwordController,
           obscureText: obscureText,
           suffixIcon: Padding(

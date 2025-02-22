@@ -13,12 +13,15 @@ class RegisterCubit extends Cubit<RegisterState> {
   TextEditingController lastNameController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AuthImple authImple = AuthImple();
-  AutovalidateMode autovalidateMode =AutovalidateMode.onUserInteraction;
-  void register() async{
+  AutovalidateMode autovalidateMode = AutovalidateMode.onUserInteraction;
+  void register() async {
     emit(RegisterLoading());
     try {
-        await authImple.sinUpWithEmailAndPassword(
-        email: emailController.text, password: passwordController.text);
+      await authImple.signUpWithEmailAndPassword(
+          firstName: firstNameController.text,
+          lastName: lastNameController.text,
+          email: emailController.text,
+          password: passwordController.text);
       emit(RegisterSuccess());
     } catch (e) {
       emit(RegisterFalier(textMassage: e.toString()));

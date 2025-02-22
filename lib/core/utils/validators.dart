@@ -8,3 +8,13 @@ bool isValidPassword(String password) {
   RegExp regex = RegExp(pattern);
   return regex.hasMatch(password);
 }
+
+
+
+
+
+bool isValidName(String name) {
+  String pattern = r'^[a-zA-Z\s]+$';
+  RegExp regex = RegExp(pattern);
+  return regex.hasMatch(name);
+}

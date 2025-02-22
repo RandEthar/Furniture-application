@@ -1,7 +1,6 @@
 
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture_app/core/DI/dependency_injection.dart';
 import 'package:furniture_app/core/routing/app_routing.dart';
 import 'package:furniture_app/core/routing/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,14 +8,15 @@ import 'firebase_options.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/core/theming/colors.dart';
 
-
-void main() async{
+void main() async {
+  setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const  MyApp(),
-   );
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -32,21 +32,14 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: ThemeData(
             colorScheme: ColorScheme.fromSwatch().copyWith(
-         primary: ColorsManeger.buttonGreenTeal.withOpacity(0.5)
-            ),
-          scaffoldBackgroundColor: Colors.white,
+                primary: ColorsManeger.buttonGreenTeal.withOpacity(0.5)),
+            scaffoldBackgroundColor: Colors.white,
           ),
-          onGenerateRoute:AppRouting.onGenerateRoute ,
+          onGenerateRoute: AppRouting.onGenerateRoute,
           initialRoute: Routes.splashScreen,
           debugShowCheckedModeBanner: false,
-      
-   
-    
-    
         );
       },
-
     );
   }
 }
-

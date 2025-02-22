@@ -26,6 +26,15 @@ class _CustomFormState extends State<CustomFormRegister> {
         child: Column(
           children: [
             CustomTextField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter Your Name';
+                }
+                if (!isValidName(value)) {
+                  return 'Enter a Valid Name';
+                }
+                return null;
+              },
               controller: context.read<RegisterCubit>().firstNameController,
               prefixIcon: Padding(
                 padding: EdgeInsets.only(right: 16.w, left: 20.w),
@@ -45,6 +54,15 @@ class _CustomFormState extends State<CustomFormRegister> {
             ),
             verticalSpace(16),
             CustomTextField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Enter Your Name';
+                }
+                if (!isValidName(value)) {
+                  return 'Enter a Valid Name';
+                }
+                return null;
+              },
               controller: context.read<RegisterCubit>().lastNameController,
               prefixIcon: Padding(
                 padding: EdgeInsets.only(right: 16.w, left: 20.w),

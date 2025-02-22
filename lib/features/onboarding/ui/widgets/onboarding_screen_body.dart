@@ -40,6 +40,7 @@ class _OnBoardingScreenBodyState extends State<OnBoardingScreenBody> {
           ),
           verticalSpace(32),
           DotesIndecator(
+            height: 10,width: 10,radius: 10,
             currentIndex: currentPage,
           ),
           verticalSpace(32),

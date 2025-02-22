@@ -7,13 +7,15 @@ import 'package:furniture_app/core/theming/styles.dart';
 
 
 class ButtonApp extends StatelessWidget {
-  const ButtonApp ({super.key, required this.text, required this.height, required this.width, required this.backgroundColor, required this.textColor, required this.onPressed});
+  const ButtonApp ({super.key, required this.text, required this.height, required this.width, required this.backgroundColor, required this.textColor, required this.onPressed, this.borderRadius, this.textStyle});
   final  String text;
 final double height;
 final double width;
 final Color backgroundColor;
 final Color textColor;
+final TextStyle? textStyle;
 final void Function() onPressed;
+final BorderRadiusGeometry ? borderRadius;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,11 +23,12 @@ final void Function() onPressed;
       height: height,width: width,
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(8.r)
+        borderRadius:borderRadius?? BorderRadius.circular(8.r)
       ),
       child: TextButton(
        
-        onPressed:onPressed, child: Text(text,style:TextStyles.manrope16BoldWhite.copyWith(
+        onPressed:onPressed, child: Text(text,
+        style:textStyle??TextStyles.manrope16BoldWhite.copyWith(
           color: textColor
         ) ,)),
     );

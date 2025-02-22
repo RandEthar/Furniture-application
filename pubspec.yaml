@@ -49,6 +49,10 @@ dependencies:
   googleapis: ^13.2.0
   googleapis_auth: ^1.6.0
   get_it: ^8.0.3
+  cloud_firestore: ^5.6.4
+  zoom_tap_animation: ^1.1.0
+  get: ^4.7.2
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
