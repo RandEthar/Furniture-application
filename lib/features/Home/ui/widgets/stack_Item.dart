@@ -16,7 +16,7 @@ class StackItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(furnitureModel.imageUrl,height: 120.h,width: 120.w,),
+        Image.network(furnitureModel.imageUrl,height: 120.h,width: 120.w,),
       Positioned(bottom: 0,
          child: ContainerDiscount(discount:furnitureModel.discount ,))
       ],
