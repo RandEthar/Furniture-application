@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
@@ -6,6 +7,7 @@ import 'package:furniture_app/core/services/page_controller.dart';
 import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/font_weight_helper.dart';
 import 'package:furniture_app/core/theming/styles.dart';
+import 'package:furniture_app/features/Home/logic/cubit/home_cubit.dart';
 import 'package:furniture_app/features/Home/ui/home_screen.dart';
 import 'package:furniture_app/features/cart/ui/cart_screen.dart';
 import 'package:get/get.dart';
@@ -14,37 +16,39 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class NavbarApp extends StatelessWidget {
   NavbarApp({super.key});
- final  PageViewController contro=Get.put(PageViewController());
+  final PageViewController contro = Get.put(PageViewController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-          physics:const NeverScrollableScrollPhysics(), 
+        physics: const NeverScrollableScrollPhysics(),
         controller: contro.pageController,
-        children:const [
-   HomeScreen(),CartScreen()
+        children:  [
+          BlocProvider(
+            create: (context) => HomeCubit()..featchHomeData(),
+            child:const  HomeScreen(),
+          ),
+        const   CartScreen()
         ],
-
       ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,vertical: 10
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         width: double.infinity,
         height: 68.h,
-       decoration:  BoxDecoration(
-        color: Colors.white,
-        boxShadow: [ BoxShadow(
-        offset:const Offset(0, -4), 
-        blurRadius: 20,
-        spreadRadius: 0,
-        color: Colors.black.withOpacity(0.08), 
-      ),],
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20.r),  topRight: Radius.circular(20.r)
-        )
-       ),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                offset: const Offset(0, -4),
+                blurRadius: 20,
+                spreadRadius: 0,
+                color: Colors.black.withOpacity(0.08),
+              ),
+            ],
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.r),
+                topRight: Radius.circular(20.r))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -96,4 +100,3 @@ Widget bottomNavBarItem(BuildContext context,
         ),
       ));
 }
-
