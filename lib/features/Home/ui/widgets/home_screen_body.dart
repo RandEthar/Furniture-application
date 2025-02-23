@@ -27,7 +27,7 @@ class HomeScreenBody extends StatelessWidget {
         verticalSpace(16),
       Padding(
         padding:  EdgeInsets.only(left: 16.w),
-        child: const ListViewProduct (),
+        child: const ListViewProduct(),
       )
       ],),
     );

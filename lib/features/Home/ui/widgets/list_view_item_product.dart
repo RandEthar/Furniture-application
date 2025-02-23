@@ -53,7 +53,7 @@ class ListViewItemProduct extends StatelessWidget {
                    decoration: TextDecoration.lineThrough,),
             ),
            //  verticalSpace(4),
-           RatingAndNumberOfView(furnitureModel: furnitureModel,)
+           RatingAndNumberOfView(rating: furnitureModel.rating,reviews:furnitureModel.reviews,)
           ],
         ),
       ),

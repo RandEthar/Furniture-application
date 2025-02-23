@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:furniture_app/core/routing/routes.dart';
 import 'package:furniture_app/core/widgets/navbar_app.dart';
-import 'package:furniture_app/features/Home/ui/home_screen.dart';
+import 'package:furniture_app/features/Home/data/furniture_model.dart';
+import 'package:furniture_app/features/Home/ui/screens/product_detail.dart';
+
 import 'package:furniture_app/features/Login/logic/cubit/login_cubit.dart';
 import 'package:furniture_app/features/Login/ui/login_screen.dart';
 import 'package:furniture_app/features/onboarding/ui/onboarding_screen.dart';
@@ -29,15 +31,14 @@ class AppRouting {
                   create: (context) => LoginCubit(),
                   child: const LoginScreen(),
                 ));
-                 case Routes.homeScreen:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: (context) => LoginCubit(),
-                  child: const HomeScreen(),
-                ));
+      case Routes.productDetail:
+        return MaterialPageRoute(builder: (_) {
+          return ProductDetailScreen(
+            furnitureModel: settings.arguments as FurnitureModel,
+          );
+        });
 
-
-                       case Routes.navbarApp:
+      case Routes.navbarApp:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
                   create: (context) => LoginCubit(),

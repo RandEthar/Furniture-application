@@ -26,7 +26,8 @@ class StackItem extends StatelessWidget {
         );
         },),
       Positioned(bottom: 0,
-         child: ContainerDiscount(discount:furnitureModel.discount ,))
+         child: ContainerDiscount(discount:furnitureModel.discount ,     width: 51,
+      height: 20,))
       ],
     );
   }

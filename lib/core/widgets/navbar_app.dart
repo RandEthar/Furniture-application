@@ -8,7 +8,8 @@ import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/font_weight_helper.dart';
 import 'package:furniture_app/core/theming/styles.dart';
 import 'package:furniture_app/features/Home/logic/cubit/home_cubit.dart';
-import 'package:furniture_app/features/Home/ui/home_screen.dart';
+import 'package:furniture_app/features/Home/ui/screens/home_screen.dart';
+
 import 'package:furniture_app/features/cart/ui/cart_screen.dart';
 import 'package:get/get.dart';
 

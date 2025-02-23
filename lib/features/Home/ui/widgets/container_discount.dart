@@ -4,13 +4,17 @@ import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/styles.dart';
 
 class ContainerDiscount extends StatelessWidget {
-  const ContainerDiscount({super.key, required this.discount});
+  const ContainerDiscount({super.key, required this.discount, required this.width, required this.height});
     final double discount;
+    final double  width;
+      final double height;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 51,
-      height: 20,
+        width:width,
+      height: height,
+      // width: 51,
+      // height: 20,
       decoration: BoxDecoration(
           color: ColorsManeger.red,
           borderRadius: BorderRadius.only(
