@@ -11,6 +11,7 @@ import 'package:furniture_app/features/Home/logic/home_cubit/home_cubit.dart';
 import 'package:furniture_app/features/Home/ui/screens/home_screen.dart';
 
 import 'package:furniture_app/features/cart/ui/cart_screen.dart';
+import 'package:furniture_app/features/wishlist/cubit/wishlist_cubit.dart';
 import 'package:furniture_app/features/wishlist/ui/wishlist_screen.dart';
 import 'package:get/get.dart';
 
@@ -26,13 +27,16 @@ class NavbarApp extends StatelessWidget {
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: contro.pageController,
-        children:  [
+        children: [
           BlocProvider(
             create: (context) => HomeCubit()..featchHomeData(),
-            child:const  HomeScreen(),
+            child: const HomeScreen(),
           ),
-             const  WishlistScreen(),
-        const   CartScreen()
+        BlocProvider(
+            create: (context) => WishlistCubit()..featchWishListProducts(),
+            child:const  WishlistScreen(),
+          ),
+          const CartScreen()
         ],
       ),
       bottomNavigationBar: Container(
@@ -60,7 +64,7 @@ class NavbarApp extends StatelessWidget {
             bottomNavBarItem(context,
                 lable: 'Wishlist', icon: 'asset/svg/wishlist.svg', page: 1),
             bottomNavBarItem(context,
-                lable: 'Cart', icon: 'asset/svg/cart-icon.svg',  page: 2),
+                lable: 'Cart', icon: 'asset/svg/cart-icon.svg', page: 2),
           ],
         ),
       ),

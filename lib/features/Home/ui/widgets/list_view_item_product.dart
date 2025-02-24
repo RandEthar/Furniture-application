@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:furniture_app/core/helper/box_decorations.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
 import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/styles.dart';
@@ -16,17 +17,7 @@ class ListViewItemProduct extends StatelessWidget {
     return Container(
       height: 246.h,
       width: 152.w,
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(14.r),
-          boxShadow:  [
-              BoxShadow(
-        color: Colors.black.withOpacity(0.08), 
-        offset:const  Offset(4, 4), 
-        blurRadius: 12, 
-        spreadRadius: 2,
-      ),
-          ]),
+      decoration: boxDecorations(),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -59,6 +50,7 @@ class ListViewItemProduct extends StatelessWidget {
       ),
     );
   }
+
 }
 
 
