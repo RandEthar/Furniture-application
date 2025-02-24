@@ -14,7 +14,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> featchHomeData() async {
     emit(HomeDataLoading());
-   await Future.delayed(const Duration(seconds: 10));
+
     try {
 
  List<FurnitureModel> data= await homeServicesImpl.getHomeData();

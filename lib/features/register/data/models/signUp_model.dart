@@ -2,7 +2,7 @@ class SignupModel {
   final String firstName;
   final String lastName;
   final String email;
-  final String uid;
+  final String uid; 
 
   SignupModel(
       {required this.firstName,

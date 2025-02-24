@@ -7,10 +7,11 @@ import 'package:furniture_app/core/services/page_controller.dart';
 import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/font_weight_helper.dart';
 import 'package:furniture_app/core/theming/styles.dart';
-import 'package:furniture_app/features/Home/logic/cubit/home_cubit.dart';
+import 'package:furniture_app/features/Home/logic/home_cubit/home_cubit.dart';
 import 'package:furniture_app/features/Home/ui/screens/home_screen.dart';
 
 import 'package:furniture_app/features/cart/ui/cart_screen.dart';
+import 'package:furniture_app/features/wishlist/ui/wishlist_screen.dart';
 import 'package:get/get.dart';
 
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
@@ -30,6 +31,7 @@ class NavbarApp extends StatelessWidget {
             create: (context) => HomeCubit()..featchHomeData(),
             child:const  HomeScreen(),
           ),
+             const  WishlistScreen(),
         const   CartScreen()
         ],
       ),
@@ -56,9 +58,9 @@ class NavbarApp extends StatelessWidget {
             bottomNavBarItem(context,
                 lable: 'Home', icon: 'asset/svg/home-icon.svg', page: 0),
             bottomNavBarItem(context,
-                lable: 'Cart', icon: 'asset/svg/cart-icon.svg', page: 1),
+                lable: 'Wishlist', icon: 'asset/svg/wishlist.svg', page: 1),
             bottomNavBarItem(context,
-                lable: 'Profile', icon: 'asset/svg/user-icon.svg', page: 2),
+                lable: 'Cart', icon: 'asset/svg/cart-icon.svg',  page: 2),
           ],
         ),
       ),

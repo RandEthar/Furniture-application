@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/core/routing/routes.dart';
-import 'package:furniture_app/core/theming/colors.dart';
+
 import 'package:furniture_app/features/Home/data/furniture_model.dart';
-import 'package:furniture_app/features/Home/logic/cubit/home_cubit.dart';
+import 'package:furniture_app/features/Home/logic/home_cubit/home_cubit.dart';
 import 'package:furniture_app/features/Home/ui/widgets/list_view_item_product.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -48,7 +48,7 @@ class ListViewProduct extends StatelessWidget {
             padding: EdgeInsets.only(right: 16.w, top: 6, bottom: 6),
             child: GestureDetector(
                   onTap: (){
-            Navigator.pushReplacementNamed(context,Routes.productDetail,arguments:products[index] );
+            Navigator.pushNamed(context,Routes.productDetail,arguments:products[index] );
           },
               child: ListViewItemProduct(
                 furnitureModel: products[index],

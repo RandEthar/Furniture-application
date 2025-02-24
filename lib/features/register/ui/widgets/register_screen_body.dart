@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
+import 'package:furniture_app/core/routing/routes.dart';
 
 import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/widgets/button_app.dart';
@@ -34,6 +35,8 @@ class RegisterScreenBody extends StatelessWidget {
                     .validate()) {
                 //  context.read<RegisterCubit>().formKey.currentState!.save();
                    context.read<RegisterCubit>().register();
+                      Navigator.pushNamed(
+                          context, Routes.loginScreen);
                    log('Create Account!');
                 }else{
                      context.read<RegisterCubit>().autovalidateMode=AutovalidateMode.onUserInteraction;

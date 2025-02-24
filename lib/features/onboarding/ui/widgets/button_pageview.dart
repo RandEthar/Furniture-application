@@ -41,7 +41,7 @@ class ButtonPageview extends StatelessWidget {
                     goToNextPage();
                     if (currentPage == 2) {
                       Navigator.pushReplacementNamed(
-                          context, Routes.navbarApp);
+                          context, Routes.loginScreen);
                     }
                   },
                   text: "Next",

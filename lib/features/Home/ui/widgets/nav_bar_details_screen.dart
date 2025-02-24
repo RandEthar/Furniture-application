@@ -4,12 +4,13 @@ import 'package:furniture_app/core/helper/spacing.dart';
 import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/styles.dart';
 import 'package:furniture_app/core/widgets/button_app.dart';
+import 'package:furniture_app/features/Home/data/furniture_model.dart';
 import 'package:furniture_app/features/Home/ui/widgets/favorite_contenar.dart';
-import 'package:googleapis/container/v1.dart';
+
 
 class NavBarDetailsScreen extends StatelessWidget {
-  const NavBarDetailsScreen({super.key});
-
+  const NavBarDetailsScreen({super.key, required this.furnitureModel});
+final FurnitureModel furnitureModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -33,7 +34,7 @@ class NavBarDetailsScreen extends StatelessWidget {
                   padding:EdgeInsets.symmetric(horizontal: 16.w,vertical: 12.h),
                   child: Row(
                     children: [
-                    const  FavoriteContenar(),
+                     FavoriteContenar(furnitureModel:furnitureModel,),
                      horizontalSpacing(16),
                      ButtonApp(text:" Add to Cart",
                      textStyle: TextStyles.manrope16BoldWhite

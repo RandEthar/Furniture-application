@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
+import 'package:furniture_app/core/routing/routes.dart';
 import 'package:furniture_app/core/theming/colors.dart';
 import 'package:furniture_app/core/theming/styles.dart';
 import 'package:furniture_app/core/widgets/button_app.dart';
@@ -40,6 +41,8 @@ class LoginScreenBody extends StatelessWidget {
                     .currentState!
                     .validate()) {
                   context.read<LoginCubit>().logIn();
+                     Navigator.pushNamed(
+                          context, Routes.navbarApp);
                 } else {
                   context.read<LoginCubit>().autovalidateMode =
                       AutovalidateMode.always;
