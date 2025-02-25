@@ -26,8 +26,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     // TODO: implement initState
     super.initState();
     context.read<DetailsCubit>().featchFavoritList();
+        context.read<DetailsCubit>().featchCartList();
     log('featchFavoritList');
-    print(  context.read<DetailsCubit>().productList);
+    print(  context.read<DetailsCubit>().productListFav);
   }
   @override
   Widget build(BuildContext context) {

@@ -9,6 +9,7 @@ import 'package:furniture_app/core/theming/font_weight_helper.dart';
 import 'package:furniture_app/core/theming/styles.dart';
 import 'package:furniture_app/features/Home/logic/home_cubit/home_cubit.dart';
 import 'package:furniture_app/features/Home/ui/screens/home_screen.dart';
+import 'package:furniture_app/features/cart/cart_cubit/cart_cubit.dart';
 
 import 'package:furniture_app/features/cart/ui/cart_screen.dart';
 import 'package:furniture_app/features/wishlist/cubit/wishlist_cubit.dart';
@@ -32,11 +33,14 @@ class NavbarApp extends StatelessWidget {
             create: (context) => HomeCubit()..featchHomeData(),
             child: const HomeScreen(),
           ),
-        BlocProvider(
+          BlocProvider(
             create: (context) => WishlistCubit()..featchWishListProducts(),
-            child:const  WishlistScreen(),
+            child: const WishlistScreen(),
           ),
-          const CartScreen()
+          BlocProvider(
+            create: (context) => CartCubit()..featchCartList(),
+            child: const CartScreen(),
+          )
         ],
       ),
       bottomNavigationBar: Container(
