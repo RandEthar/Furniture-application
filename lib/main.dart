@@ -4,11 +4,14 @@ import 'package:furniture_app/core/DI/dependency_injection.dart';
 import 'package:furniture_app/core/routing/app_routing.dart';
 import 'package:furniture_app/core/routing/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:furniture_app/core/utils/shared_preferences_singleton.dart';
 import 'firebase_options.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/core/theming/colors.dart';
 
 void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+ await AppPreferences.init();
   setupLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

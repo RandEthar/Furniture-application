@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
 import 'package:furniture_app/core/routing/routes.dart';
 import 'package:furniture_app/core/theming/colors.dart';
+import 'package:furniture_app/core/utils/api_endpoints.dart';
+import 'package:furniture_app/core/utils/shared_preferences_singleton.dart';
 import 'package:furniture_app/core/widgets/button_app.dart';
 
 class ButtonPageview extends StatelessWidget {
@@ -40,6 +42,8 @@ class ButtonPageview extends StatelessWidget {
                   onPressed: () {
                     goToNextPage();
                     if (currentPage == 2) {
+
+                      AppPreferences.setBool(key: ApiEndpoints.isUserOpendApp, value:true);
                       Navigator.pushReplacementNamed(
                           context, Routes.loginScreen);
                     }

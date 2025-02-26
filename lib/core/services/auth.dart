@@ -13,6 +13,9 @@ abstract class Auth {
   });
   Future<void> signInWithEmailAndPassword(
       {required String email, required String password});
+
+  Future<bool> isCurrentUserLoggedin();
+
 }
 
 class AuthImple implements Auth {
@@ -66,5 +69,11 @@ class AuthImple implements Auth {
     } catch (e) {
       throw Exception(e);
     }
+  }
+  
+  @override
+  Future<bool> isCurrentUserLoggedin() async{
+  
+   return  firebaseAuth.currentUser!=null;
   }
 }

@@ -8,11 +8,13 @@ static String getProducts()=>'products';
 static String  addProductsToFavorits({required String productId})=>'users/${userUid()}/favourite/${productId}';
 static String  addProductsToCart({required String productId})=>'users/${userUid()}/cart/${productId}';
 static String userUid()=>FirebaseAuth.instance.currentUser!.uid;
-
- 
-
 static String   getFavorits()=>'users/${userUid()}/favourite';
 static String   getCart()=>'users/${userUid()}/cart';
+
+
+
+
+static String  isUserOpendApp='isUserOpendApp';
 
 
 

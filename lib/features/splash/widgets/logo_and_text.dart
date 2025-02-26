@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_app/core/helper/spacing.dart';
 import 'package:furniture_app/core/routing/routes.dart';
+import 'package:furniture_app/core/services/auth.dart';
 
 import 'package:furniture_app/core/theming/styles.dart';
+import 'package:furniture_app/core/utils/api_endpoints.dart';
+import 'package:furniture_app/core/utils/shared_preferences_singleton.dart';
 
 class LogoAndText extends StatefulWidget {
   const LogoAndText({
@@ -23,11 +26,27 @@ class _LogoAndTextState extends State<LogoAndText>
   void initState() {
     super.initState();
     animation();
-    Future.delayed(Duration(seconds: 3),(){
-      return Navigator.pushReplacementNamed(context, Routes.onBoardingScreen);
-    });
+     navigatorToOnBoardingScreen();
   }
 
+
+ navigatorToOnBoardingScreen() async {
+    bool isAppOpened = AppPreferences.getBool(key:ApiEndpoints.isUserOpendApp);
+    bool isLoggedIn = await   AuthImple().isCurrentUserLoggedin();
+    return Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        if (mounted) {
+          return Navigator.pushReplacementNamed(
+            context,
+            isAppOpened
+                ? (isLoggedIn ?Routes.navbarApp : Routes.loginScreen)
+                : Routes.onBoardingScreen,
+          );
+        }
+      },
+    );
+  }
   @override
   void dispose() {
     super.dispose();
