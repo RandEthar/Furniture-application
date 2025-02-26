@@ -63,7 +63,7 @@ class ListCartItem extends StatelessWidget {
           Row(
             children: [
                 horizontalSpacing(80),
-             ContenertQuantity(quantity:furnitureModel.quantity,),
+             ContenertQuantity(furnitureModel:furnitureModel,),
             ],
           )
               ],

@@ -23,7 +23,7 @@ class FirestoreService {
   required dynamic value, 
 }) async {
   final reference = firestore.doc(path);
-  debugPrint('update: $path - $field: $value');
+  //debugPrint('update: $path - $field: $value');
   await reference.update({field: value});
 }
 

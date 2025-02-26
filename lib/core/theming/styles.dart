@@ -7,6 +7,13 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TextStyles{
 
+
+
+static   TextStyle inter36BoldBlack=GoogleFonts.alatsi(
+    color: Colors.black,
+    fontWeight: FontWeightHelper.bold,
+    fontSize: 10.sp
+  );
 static   TextStyle inter36ExtraBoldWhite=GoogleFonts.inter(
     color: Colors.white,
     fontWeight: FontWeightHelper.extraBold,

@@ -18,3 +18,5 @@ final class CartFailure extends CartState {
 
   CartFailure({required this.errorMassage});
 }
+final class UpdatedLoading extends CartState {}
+final class UpdatedSuccess extends CartState {}

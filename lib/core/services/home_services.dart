@@ -10,6 +10,7 @@ abstract class HomeServices {
     Future<void> addProductsToCart(FurnitureModel furnitureModel);
       Future<void> removeProductsFromCart(FurnitureModel furnitureModel);
       Future<List<FurnitureModel>> getCartList();
+       Future<void> updateQuantity(FurnitureModel furnitureModel);
 }
 
 class HomeServicesImpl implements HomeServices {
@@ -63,5 +64,11 @@ class HomeServicesImpl implements HomeServices {
     });
     return data;
   
+  }
+  
+  @override
+  Future<void> updateQuantity(FurnitureModel furnitureModel) async{
+       firestoreService.updateField(path: ApiEndpoints.addProductsToCart(productId: furnitureModel.id),
+        field: 'quantity', value: furnitureModel.quantity);
   }
 }
